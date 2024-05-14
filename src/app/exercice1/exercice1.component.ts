@@ -11,4 +11,12 @@ export class Exercice1Component implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  add() {
+    this.result++;
+  }
+
+  substract() {
+    this.result--;
+  }
 }

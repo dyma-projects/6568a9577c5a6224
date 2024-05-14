@@ -1,16 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-exercice2',
   templateUrl: './exercice2.component.html',
-  styleUrls: ['./exercice2.component.css']
+  styleUrls: ['./exercice2.component.css'],
 })
-export class Exercice2Component implements OnInit {
-  public valeur: string;
+export class Exercice2Component {
+  @ViewChild('inputRef') input: ElementRef<HTMLInputElement>;
 
-  constructor() { }
+  public valeur;
 
-  ngOnInit() {
+  constructor() {}
+
+  change() {
+    this.valeur = this.input.nativeElement.value;
   }
-
 }
